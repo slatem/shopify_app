@@ -13,6 +13,8 @@ module ShopifyApp
     attr_accessor :webhooks
     attr_accessor :scripttags
 
+    attr_accessor :enable_same_site_none
+
     # customise ActiveJob queue names
     attr_accessor :scripttags_manager_queue_name
     attr_accessor :webhooks_manager_queue_name
@@ -30,6 +32,10 @@ module ShopifyApp
 
     def has_scripttags?
       scripttags.present?
+    end
+
+    def enable_same_site_none
+      @enable_same_site_none.nil? ? embedded_app? : @enable_same_site_none
     end
 
     def scripttags_manager_queue_name

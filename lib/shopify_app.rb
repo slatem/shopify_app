@@ -28,3 +28,5 @@ require 'shopify_app/utils'
 # session repository
 require 'shopify_app/shopify_session_repository'
 require 'shopify_app/in_memory_session_store'
+
+require 'shopify_app/middleware/same_site_cookie_middleware'
